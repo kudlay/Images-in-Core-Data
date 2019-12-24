@@ -5,9 +5,11 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macOS-latest
+    runs-on: macos
 
     steps:
     - uses: actions/checkout@v1
+    - name: Bundle Install
+      run: bundle install
     - name: Build
       run: bundle exec fastlane scan
